@@ -1,0 +1,25 @@
+@use "../../../scss/abstract/" as *;
+
+.main-navbar {
+    width: 100%;
+    height: 7vh;
+    overflow: hidden;
+    @include xsBreakPoint {
+        height: auto;
+    }
+    @include smBreakPoint {
+        height: auto;
+    }
+    @include mdBreakPoint {
+        height: auto;
+    }
+    @include lgBreakPoint {
+        height: auto;
+    }
+    @include xlBreakPoint {
+        height: auto;
+    }
+    .navbar {
+        height: 100%;
+    }
+}

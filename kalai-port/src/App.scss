@@ -1,0 +1,10 @@
+@use "scss" as *;
+
+.App-front {
+  width: 100vw;
+  overflow-x: hidden;
+  @include themed() {
+    background: t($background);
+    color: t($text);
+  }
+}

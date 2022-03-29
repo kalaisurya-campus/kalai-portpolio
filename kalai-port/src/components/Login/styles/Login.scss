@@ -1,0 +1,36 @@
+@use "../../../scss/abstract/" as *;
+
+.main-login {
+    width: 100%;
+    height: 93vh;
+    overflow: hidden;
+    // background-color: blue;
+
+    .container {
+        @include smBreakPoint {
+            width: 100vw;
+        }
+    }
+    .split-container {
+        display: flex;
+        height: 100%;
+        @include xsBreakPoint {
+            flex-direction: column;
+            border: 2px solid red;
+        }
+        .left-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            // background-color: blue;
+        }
+        .right-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            // background-color: blue;
+        }
+    }
+}
