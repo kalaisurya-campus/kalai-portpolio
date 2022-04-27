@@ -1,6 +1,12 @@
 import React from "react";
-import './styles/Navbar.scss';  
-function Navbar({ dark, setdark }) {
+import "./styles/Navbar.scss";
+import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { auth } from "../../firebasefiles";
+
+function Navbar({ dark, setdark, user }) {
+    const usehistory = useHistory();
     return (
         <div className="main-navbar">
             <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -22,29 +28,55 @@ function Navbar({ dark, setdark }) {
                         id="navbarSupportedContent"
                     >
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li>welxcome To KALAISURYA</li>
+                            <li>Hi {user}</li>
                         </ul>
-                        <div class="d-flex">
-                            <p onClick={() => setdark(!dark)}>
-                                {dark ? (
-                                    <ion-icon
-                                        name="moon-outline"
-                                        style={{
-                                            fontSize: "2rem",
-                                            color: "white",
-                                        }}
-                                    ></ion-icon>
-                                ) : (
-                                    <ion-icon
-                                        name="sunny-outline"
-                                        style={{
-                                            fontSize: "2rem",
-                                            color: "yellow",
-                                        }}
-                                    ></ion-icon>
-                                )}
-                            </p>
-                        </div>
+                        {!user && (
+                            <div class="d-flex gap-4">
+                                <button
+                                    className="n-btns"
+                                    onClick={() => {
+                                        toast("WelCome Too SignUp Page!");
+                                        usehistory.push("/signup");
+                                    }}
+                                >
+                                    SignUp
+                                </button>
+                                <button
+                                    className="n-btns"
+                                    onClick={() => {
+                                        toast("Welcome Too Login Page!");
+                                        usehistory.push("/login");
+                                    }}
+                                >
+                                    login
+                                </button>
+                            </div>
+                        )}
+                        {user && (
+                            <div className="d-flex gap-4">
+                                <div
+                                    style={{
+                                        width: "100%",
+                                        fontSize: "2rem",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <ion-icon name="cart-outline"></ion-icon>
+                                </div>
+                                <button
+                                    className="n-btns"
+                                    onClick={() => {
+                                        auth.signOut();
+                                        toast("Logout SuccessFully!!");
+                                        usehistory.push("/login");
+                                    }}
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </nav>

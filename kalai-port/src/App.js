@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
-import Navbar from "./components/navbar/Navbar";
+
 
 import RoutingPagges from "./pages/RoutingPagges";
 function App() {
@@ -14,7 +14,7 @@ function App() {
     return (
         <div className={dark ? "theme--dark" : "theme--light"}>
             <div className="App-front">
-                <Navbar dark={dark} setdark={SetDark} />
+                {/* <Navbar dark={dark} setdark={SetDark} /> */}
                 <RoutingPagges dark={dark} setdark={SetDark} />
             </div>
         </div>

@@ -1,5 +1,5 @@
 //Light colors
-$primary--light: #6ddfd8;
+$primary--light: linear-gradient(180deg, #00fdb1 0%, rgba(0, 253, 177, 0.64) 100%);
 $secondary--light: #04294b;
 
 $primary-lightened: rgba(109, 223, 216, 0.2);
@@ -25,6 +25,9 @@ $shadow-sm--light: 0px 4px 5px rgba(0, 0, 0, 0.07);
 
 $button-config-light: #f8f8f8;
 $frosted-light: #e4f6f4;
+// new add bg
+
+$background_bg:linear-gradient(180deg, #00fdb1 0%, rgba(0, 253, 177, 0.64) 100%);
 
 //Dark colors
 $primary--dark: #6ddfd8;
@@ -56,7 +59,7 @@ $frosted-dark: #e4f6f4;
 
 $back_bg_dash: #e7f8f7;
 $back_exterior: rgba(196, 196, 196, 0.22);
-$back_text_color:  rgba(0, 0, 0, 0.50);
+$back_text_color: rgba(0, 0, 0, 0.5);
 
 $standard_interior: #57b2b9;
 $back_export_color: #e9a059; ;
